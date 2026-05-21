@@ -1,5 +1,5 @@
 # Diagramme 1 : Add a song to a playlist
-```
+```mermaid
 sequenceDiagram
     actor User
     participant Playlist
@@ -12,7 +12,7 @@ sequenceDiagram
 ```
 
 # Diagramme 2 : Create a playlist
-```
+```mermaid
 sequenceDiagram
     actor User
 
@@ -23,7 +23,7 @@ sequenceDiagram
 ```
 
 # Diagramme 3 : Remove a song from a playlist
-```
+```mermaid
 sequenceDiagram
     actor User
     participant Playlist
