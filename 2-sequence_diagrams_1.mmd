@@ -1,9 +1,0 @@
-sequenceDiagram
-    actor User
-    participant Playlist
-    participant Song
-
-    User->>Playlist: addSong(song)
-    Playlist->>Song: getAlbum()
-    Song-->>Playlist: album
-    Playlist-->>User: song added

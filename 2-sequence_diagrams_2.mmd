@@ -1,7 +1,0 @@
-sequenceDiagram
-    actor User
-
-    User->>User: createPlaylist(name)
-    create participant NewPlaylist as Playlist
-    User->>NewPlaylist: initialize name and createdAt
-    NewPlaylist-->>User: playlist created
