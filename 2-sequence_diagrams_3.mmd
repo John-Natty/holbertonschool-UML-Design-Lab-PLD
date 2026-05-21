@@ -1,0 +1,9 @@
+sequenceDiagram
+    actor User
+    participant Playlist
+    participant Song
+
+    User->>Playlist: removeSong(song)
+    Playlist->>Playlist: check if song exists
+    Playlist->>Playlist: remove song
+    Playlist-->>User: song removed
