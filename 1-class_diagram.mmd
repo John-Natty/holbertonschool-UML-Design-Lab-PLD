@@ -1,0 +1,54 @@
+classDiagram
+    class User {
+        -userId: String
+        -username: String
+        -email: String
+        -createdAt: DateTime
+        +createPlaylist(name: String): Playlist
+        +addSongToPlaylist(song: Song, playlist: Playlist): void
+        +removeSongFromPlaylist(song: Song, playlist: Playlist): void
+        +followArtist(artist: Artist): void
+        +unfollowArtist(artist: Artist): void
+    }
+
+    class Playlist {
+        -playlistId: String
+        -name: String
+        -createdAt: DateTime
+        -updatedAt: DateTime
+        +addSong(song: Song): void
+        +removeSong(song: Song): void
+        +getSongs(): List~Song~
+    }
+
+    class Song {
+        -songId: String
+        -title: String
+        -duration: int
+        -tracknumber: int
+        +getAlbum(): Album
+        +getArtist(): Artist
+    }
+
+    class Album {
+        -albumId: String
+        -title: String
+        -releaseDate: DateTime
+        +addSong(song: Song): void
+        +getSongs(): List~Song~
+    }
+
+    class Artist {
+        -artistId: String
+        -name: String
+        -bio: String
+        +createAlbum(title: String): Album
+        +getAlbums(): List~Album~
+        +getFollowers(): List~User~
+    }
+
+    User "1" --> "0..*" Playlist : creates
+    User "0..*" --> "0..*" Artist : follows
+    Playlist "0..*" --> "0..*" Song : contains
+    Album "1" --> "1..*" Song : contains
+    Artist "1" --> "0..*" Album : creates
